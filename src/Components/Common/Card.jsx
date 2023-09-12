@@ -1,19 +1,22 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ContextGlobal } from '../utils/global.context'
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+//import { ContextGlobal } from '../utils/global.context'
 const Card = ({ name, username, id }) => {
   // Obtener el array de favoritos del localStorage
-  const { state, dispatch } = useContext(ContextGlobal);
-  const [ isFav, setIsFav] = useState(false);
+  //const context = useContext(ContextGlobal);
+  const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem('favs')) || [];
     const dentistExists = favs.find((dentist) => dentist.id === id);
-    if (dentistExists) {setIsFav(true)}
+    if (dentistExists) { setIsFav(true) }
   }, [id]);
   const addFav = () => {
+    //e.stopPropagation();
+
     const favs = JSON.parse(localStorage.getItem('favs')) || [];
     const dentistExists = favs.find((dentist) => dentist.id === id);
-    
+
 
     //Si el dentista ya esta en favoritos, lo elimina:
     if (dentistExists) {
@@ -21,8 +24,8 @@ const Card = ({ name, username, id }) => {
       localStorage.setItem('favs', JSON.stringify(newFavs));
       setIsFav(false);
       return;
-    }  
-    
+    }
+
     //Si el dentista no esta en favoritos, lo agrega:
     const dentistData = { name, username, id };
     favs.push(dentistData);
@@ -32,9 +35,11 @@ const Card = ({ name, username, id }) => {
 
   return (
     <div className="card">
-      <h3>{name}</h3>
-      <p>Username: {username}</p>
-      <p>ID: {id}</p>
+      <Link to={`/dentist/${id}`}>
+        <h3>{name}</h3>
+        <p>Username: {username}</p>
+        <p>ID: {id}</p>
+      </Link>
       <button onClick={addFav} className="favButton">{isFav ? "Eliminar de" : "Agregar a"} favoritos</button>
     </div>
   );

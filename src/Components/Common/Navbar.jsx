@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
-  const { state, dispatch } = useContext(ContextGlobal)
+  const { dispatch } = useContext(ContextGlobal)
   const toggleTheme = () => {
     dispatch({ type: "CHANGE_THEME" })
   }
