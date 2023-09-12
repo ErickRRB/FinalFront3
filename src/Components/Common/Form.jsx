@@ -15,9 +15,9 @@ const Form = () => {
     e.preventDefault();
   }
 
-  if(name.length < 5 || !/^\S+@\S+\.\S+$/.test(email)){
-    alert("Por favor verifique su información nuevamente")
-  }
+  //if(name.length < 5 || !/^\S+@\S+\.\S+$/.test(email)){
+  //  alert("Por favor verifique su información nuevamente")
+  //}
 
   return (
     <div>
