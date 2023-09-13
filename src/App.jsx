@@ -1,10 +1,10 @@
 
 import Footer from "./Components/Common/Footer";
 import Navbar from "./Components/Common/Navbar";
-import HomeComponent from "./Components/Home/Home";
-import ContactComponent from "./Components/Contact/Contact";
-import DentistDetailComponent from "./Components/DentistDetail/DentistDetail";
-import FavoritesComponent from "./Components/Favs/Favs";
+import HomeComponent from "./Components/Routes/Home";
+import ContactComponent from "./Components/Routes/Contact";
+import DentistDetailComponent from "./Components/Routes/DentistDetail";
+import FavoritesComponent from "./Components/Routes/Favs";
 import { BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import { useContext } from "react";
 import { ContextGlobal } from "./Components/utils/global.context";
