@@ -7,15 +7,15 @@ const Home = () => {
     const { state } = useContext(ContextGlobal)
 
     return (
-        <div className="container">
-            <div className="row">
+        // <div className="container">
+            <div className="card-grid">
                 {state.data.map((dentist) => (
-                    <div className="card-grid" key={dentist.id}>
+                    <div key={dentist.id}>
                         <Card {...dentist}/>
                     </div>
                 ))}
             </div>
-        </div>
+        // </div>
     )
 }
 

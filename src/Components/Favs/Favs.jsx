@@ -5,7 +5,7 @@ function Favs() {
   const [favDentists, setFavDentists] = useState([]);
 
   useEffect(() => {
-    const storedFavs = localStorage.getItem('favDentists');
+    const storedFavs = localStorage.getItem('favs');
     if (storedFavs) {
       setFavDentists(JSON.parse(storedFavs));
     }
@@ -13,9 +13,10 @@ function Favs() {
 
   return (
     <div>
-      {favDentists.map(dentist => (
-        <Card key={dentist.id} dentist={dentist} />
+      {favDentists.map((dentist) => (
+        <Card key={dentist.id} {...dentist} />
       ))}
+
     </div>
   );
 }

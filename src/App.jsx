@@ -15,6 +15,7 @@ function App() {
   return (
     <Router>
       <div className={themeClass}>
+        <div className="appContainer">
         {<Navbar/>}
         <Routes>
           <Route path="/" element={<Navigate to="/home"/>} />
@@ -23,6 +24,7 @@ function App() {
           <Route path="/dentist/:id" element={<DentistDetailComponent />} />
           <Route path="/favs" element={<FavoritesComponent />} />
         </Routes>
+        </div>
         {<Footer/>}
       </div>
     </Router>
