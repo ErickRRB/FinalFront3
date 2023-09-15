@@ -44,7 +44,7 @@ const Form = () => {
   return (
     <div>
       {submitted ? (<p>Gracias {name}, te contactaremos cuando antes vía mail</p>) : (
-        <form onSubmit={handlerForm}>
+        <form className="form" onSubmit={handlerForm}>
           <div>
             <input type="text" placeholder="Nombre de usuario" value={name} onChange={onChangeName} />
             {nameError && <span className="error" style={{ color: "red" }}>{nameError}</span>}

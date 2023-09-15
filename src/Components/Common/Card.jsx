@@ -12,7 +12,7 @@ const Card = ({ name, username, id }) => {
     if (dentistExists) { setIsFav(true) }
   }, [id]);
   const addFav = () => {
-    //e.stopPropagation();
+    
 
     const favs = JSON.parse(localStorage.getItem('favs')) || [];
     const dentistExists = favs.find((dentist) => dentist.id === id);
@@ -36,9 +36,9 @@ const Card = ({ name, username, id }) => {
   return (
     <div className="card">
       <Link to={`/dentist/${id}`}>
+        <img className="doctor-img" src="/images/doctor.jpg" alt="Imagen doctor" />
         <h3>{name}</h3>
         <p>Username: {username}</p>
-        <p>ID: {id}</p>
       </Link>
       <button onClick={addFav} className="favButton">{isFav ? "Eliminar de" : "Agregar a"} favoritos</button>
     </div>

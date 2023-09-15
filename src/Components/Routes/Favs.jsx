@@ -13,10 +13,12 @@ function Favs() {
 
   return (
     <div>
-      {favDentists.map((dentist) => (
-        <Card key={dentist.id} {...dentist} />
-      ))}
-
+      <h1>Dentistas favoritos</h1>
+      <div className='card-grid'>
+        {favDentists.map((dentist) => (
+          <Card key={dentist.id} {...dentist} />
+        ))}
+      </div>
     </div>
   );
 }
